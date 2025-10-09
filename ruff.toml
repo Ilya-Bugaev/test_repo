@@ -1,12 +1,26 @@
+# ruff.toml
+
+# Основные настройки в КОРНЕ файла
 select = ["E", "F", "I", "N", "B", "UP", "C4", "SIM"]
 ignore = ["E501", "S101", "PLR0913"]
-line-length = 79
+line-length = 100
 target-version = "py311"
 
+# Секция для форматирования
 [format]
-quote-style = "single"
 indent-style = "space"
+quote-style = "single"
 skip-magic-trailing-comma = false
 
+# Секция для сортировки импортов
 [isort]
 known-first-party = ["my_project"]
+lines-after-imports = 2
+
+# Исключение файлов/папок
+exclude = [
+    "**/__pycache__",
+    "**/.pytest_cache", 
+    "**/venv",
+    "**/env",
+]
