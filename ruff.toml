@@ -1,0 +1,20 @@
+select = ["E", "F", "I", "N", "B", "UP", "C4", "SIM"]
+ignore = ["E501", "S101", "PLR0913"]
+line-length = 79
+target-version = "py311"
+
+[format]
+quote-style = "single"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[isort]
+known-first-party = ["my_project"]
+
+exclude = [
+    "**/migrations/",
+    "**/__pycache__/",
+    "**/build/",
+    "**/dist/",
+    "*.pyc",
+]
