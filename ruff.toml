@@ -10,11 +10,3 @@ skip-magic-trailing-comma = false
 
 [isort]
 known-first-party = ["my_project"]
-
-exclude = [
-    "**/migrations/",
-    "**/__pycache__/",
-    "**/build/",
-    "**/dist/",
-    "*.pyc",
-]
