@@ -1,0 +1,18 @@
+line-length = 100
+target-version = "py311"
+
+# Настройки линтера
+[lint]
+select = ["E", "F", "I", "N", "B", "UP", "C4", "SIM"]
+ignore = ["E501", "S101", "PLR0913"]
+
+# Настройки isort
+[lint.isort]
+known-first-party = ["my_project"]
+lines-after-imports = 2
+
+# Настройки форматирования
+[format]
+indent-style = "space"
+quote-style = "single"
+skip-magic-trailing-comma = false
