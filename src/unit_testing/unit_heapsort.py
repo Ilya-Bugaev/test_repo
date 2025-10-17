@@ -1,7 +1,6 @@
 import random
 
 from bubble_sort import bubble_sort
-
 from heapsort import heapsort
 
 
@@ -46,7 +45,7 @@ def test_negative():
 #property based
 def test_random_arrays():
     #Сравнение на случайных массивах
-    for i in range(50):  #50 случайных тестов
+    for _i in range(50):  #50 случайных тестов
         size = random.randint(3, 100)
         arr = [random.randint(-100, 100) for n in range(size)]
         
