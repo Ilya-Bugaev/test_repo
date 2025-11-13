@@ -1,7 +1,7 @@
 line-length = 100
 target-version = "py311"
 
-# Настройки линтера
+# Настройки линтера (современный формат)
 [lint]
 select = ["E", "F", "I", "N", "B", "UP", "C4", "SIM"]
 ignore = ["E501", "S101", "PLR0913"]
@@ -17,6 +17,7 @@ indent-style = "space"
 quote-style = "single"
 skip-magic-trailing-comma = false
 
+# Исключаемые файлы и директории
 exclude = [
     "*.txt",
     "*.md",
@@ -37,12 +38,6 @@ exclude = [
     "*.tsv",
     "*.xml",
     "*.rst",
-    "*.cfg",
-    "*.ini",
-    "*.log",
-    "*.out",
-    "*.diff",
-    "*.patch",
     "**/__pycache__/",
     "**/.pytest_cache/",
     "**/.ruff_cache/",
