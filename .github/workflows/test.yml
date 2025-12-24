@@ -2,29 +2,35 @@ name: Run Tests
 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches: [main, master, develop]
   pull_request:
-    branches: [teps:
-      - name: 📥 Checkout code
+    branches: [main, master, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: 🐍 Set up Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: 📦 Install dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pytest pytest-cov
-          pip install hypothesis  # если используете property-based тесты
+          pip install hypothesis
 
-      - name: 🔍 Run tests with pytest
+      - name: Run tests with pytest
         run: |
           pytest src/unit_testing/ -v --cov=src --cov-report=xml
 
-      - name: 📊 Upload coverage
+      - name: Upload coverage
         uses: codecov/codecov-action@v3
         with:
           file: ./coverage.xml
